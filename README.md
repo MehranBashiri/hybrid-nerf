@@ -39,11 +39,33 @@ To evaluate the robustness of the models, the complex noisy cow dataset introduc
 
 These datasets are automatically downloaded and prepared during notebook execution.
 
+## Models
+
+The project includes six models evaluated on both the clean and complex noisy cow datasets. Each model's results are detailed in the Jupyter Notebook.
+
+### Baseline NeRF
+The basic implementation of NeRF with no additional optimizations or extensions. It serves as the starting point for evaluating the effectiveness of enhancements.
+
+### Baseline NeRF + Mixed Precision Training (MPT)
+Incorporates mixed precision training to optimize memory usage and improve training efficiency.
+
+### Baseline NeRF + MPT + Early Ray Termination (ERT)
+Adds Early Ray Termination (ERT), which dynamically halts ray sampling for regions that meet density thresholds, reducing computation.
+
+### Baseline NeRF + MPT + ERT + Denoising Autoencoder (DAE)
+Introduces a Denoising Autoencoder (DAE) to mitigate noise and improve robustness, especially for complex noisy datasets.
+
+### Baseline NeRF + MPT + Multi-View Consistency (MVC)
+Ensures coherence across multiple views of the same scene by enforcing consistency constraints during training.
+
+### Baseline NeRF + MPT + DAE
+Combines Mixed Precision Training and Denoising Autoencoder without ERT or MVC for robust rendering in noisy conditions.
+
 ## Results
-The performance of various models is evaluated using the following metrics:
+The performance of the models is evaluated using the following metrics:
 - **PSNR (Peak Signal-to-Noise Ratio):** Measures pixel-level fidelity.
 - **SSIM (Structural Similarity Index):** Evaluates structural and perceptual similarity.
-- **LPIPS (Learned Perceptual Image Patch Similarity):** Assesses perceptual similarity based on learned features.
+- **LPIPS (Learned Perceptual Image Patch Similarity):** Assesses perceptual similarity using learned features.
 
-Comprehensive results are documented in the notebook, including visualizations of reconstructed scenes and quantitative comparisons.
+The results, including comparisons of the six models across both datasets, are presented quantitatively and qualitatively in the Jupyter Notebook and project report.
 
