@@ -47,13 +47,3 @@ The performance of various models is evaluated using the following metrics:
 
 Comprehensive results are documented in the notebook, including visualizations of reconstructed scenes and quantitative comparisons.
 
-## Citation
-If you use this project in your research, please cite the following:
-
-```bibtex
-@article{yourcitation,
-  title={Neural Radiance Fields for 3D Scene Reconstruction},
-  author={Your Name},
-  journal={Your Journal},
-  year={2024},
-}
